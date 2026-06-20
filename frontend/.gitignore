@@ -22,4 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-./data
+/data/
+src/evaluate.py
+src/preprocess.py
+src/train.py
+src/visualize.py
