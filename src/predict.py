@@ -38,3 +38,27 @@ def predict_grade_input_data():
     predictions = model.predict(new_student)
 
     return predictions[0]
+
+def predict_grade_api(
+    socioeconomic_score: float,
+    study_hours: float,
+    sleep_hours: float,
+    attendance: float
+):
+    model = joblib.load(
+        "models/student_score_prediction_RandomForestRegressor_model.joblib"
+    )
+
+    study_score = (study_hours * attendance)
+
+    new_student = pd.DataFrame({
+        'Socioeconomic Score': [socioeconomic_score],
+        'Study Hours': [study_hours],
+        'Sleep Hours': [sleep_hours],
+        'Attendance (%)': [attendance],
+        'Study Score': [study_score]
+    })
+
+    prediction = model.predict(new_student)
+
+    return float(prediction[0])

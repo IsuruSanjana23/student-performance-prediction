@@ -27,9 +27,9 @@ X_train,X_test,y_train,y_test = load_and_preprocess_data()
 #print("X_train shape:", X_train.shape)
 #print("X_test shape:", X_test.shape)
 
-#model = train_model(X_train, X_test, y_train, y_test)
+model = train_model(X_train, X_test, y_train, y_test)
 
-#train_r2 , test_r2 , predictions = evaluate_model(model, X_train, X_test, y_train, y_test)
+train_r2 , test_r2 , predictions = evaluate_model(model, X_train, X_test, y_train, y_test)
 
 
 #print(f"Train R2: {train_r2:.2f}")
@@ -41,8 +41,22 @@ X_train,X_test,y_train,y_test = load_and_preprocess_data()
 #print(f"Predicted Grade: {predicted_grade:.2f}")
 
 
+"""
 try:
     predictions  = predict_grade_input_data()
     print(f"Predicted Grade: {predictions:.2f}")
 except Exception as e:
     print("Error during prediction:", str(e))
+
+"""
+
+from src.predict import predict_grade_api
+
+grade = predict_grade_api(
+    0.7,
+    8,
+    7,
+    90
+)
+
+print(grade)
