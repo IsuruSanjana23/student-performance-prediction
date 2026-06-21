@@ -10,6 +10,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://student-performance-prediction-p14b1mgzl.vercel.app",
+        "https://student-performance-prediction-production-a3d5.up.railway.app",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ],
