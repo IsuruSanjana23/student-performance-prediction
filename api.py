@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://student-performance-prediction-production-a3d5.up.railway.app/"
+        "https://student-performance-prediction-production-a3d5.up.railway.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
